@@ -1,7 +1,7 @@
 #include "test_helper.h"
 
 void
-test_escaped_string()
+test_escaped_string(void)
 {
   TEST_RESULT("", "");
   TEST_RESULT("///", "///");
@@ -17,7 +17,7 @@ test_escaped_string()
 }
 
 void
-test_nonnull_on_size_index()
+test_nonnull_on_size_index(void)
 {
   size_t size = 1;
   const uint8_t *src = ">a";
@@ -28,7 +28,7 @@ test_nonnull_on_size_index()
 }
 
 void
-test_escaping_multiple_times()
+test_escaping_multiple_times(void)
 {
   const uint8_t *src = "I'm so happy";
   uint8_t *dest;
@@ -42,7 +42,7 @@ test_escaping_multiple_times()
 }
 
 void
-test_escaping_escape_result()
+test_escaping_escape_result(void)
 {
   const uint8_t *src = "<<<<<<< HEAD:";
   uint8_t *dest1, *dest2;

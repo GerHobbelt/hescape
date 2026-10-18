@@ -6,7 +6,7 @@
 static int assertions, failures;
 
 void
-teardown()
+teardown(void)
 {
   printf("\n\n%d assertions, %d failures\n\n", assertions, failures);
   exit(failures);
@@ -50,7 +50,7 @@ expect_int(int expected, int actual, const char *file, int line)
 }
 
 void
-setup()
+setup(void)
 {
   assertions = 0;
   failures   = 0;

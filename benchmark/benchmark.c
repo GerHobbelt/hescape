@@ -71,17 +71,17 @@ bench_escape(const char *label, const char *str, long iteration)
   double hesc_sec = measure_time(str, iteration, &escape_with_hescape);
   double houd_sec = measure_time(str, iteration, &escape_with_houdini);
 
-  printf("│ %-16s │ %5ld │ %5.2fx │ %f s (%9ld i/s) │ %f s (%9ld i/s) │ %9ld │\n",
+  printf("│ %-16s │ %5zu │ %5.2fx │ %f s (%9ld i/s) │ %f s (%9ld i/s) │ %9ld │\n",
       label, strlen(str), houd_sec / hesc_sec,
       hesc_sec, (long)(iteration / hesc_sec),
       houd_sec, (long)(iteration / houd_sec),
       iteration);
 }
 
-void print_table_sep();
+void print_table_sep(void);
 
 void
-print_table_header()
+print_table_header(void)
 {
   printf("┌──────────────────┬───────┬────────┬────────────────────────────┬────────────────────────────┬───────────┐\n");
   printf("│ Benchmark        │ Size  │ Rate   │ Hescape                    │ Houdini                    │ Iteration │\n");
@@ -89,13 +89,13 @@ print_table_header()
 }
 
 void
-print_table_sep()
+print_table_sep(void)
 {
   printf("├──────────────────┼───────┼────────┼────────────────────────────┼────────────────────────────┼───────────┤\n");
 }
 
 void
-print_table_footer()
+print_table_footer(void)
 {
   printf("└──────────────────┴───────┴────────┴────────────────────────────┴────────────────────────────┴───────────┘\n");
 }
